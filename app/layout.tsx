@@ -24,7 +24,7 @@ const space_grotesk = Space_Grotesk({
 
 export const metadata: Metadata = {
   title: "Mahdi Ahmed",
-  description: "This is me",
+  description: "Coming Soon",
 };
 
 export default function RootLayout({
