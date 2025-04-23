@@ -11,7 +11,7 @@ export default function Navbar() {
   const [isOpen, setIsOpen] = React.useState(false);
 
   return (
-    <nav className="fixed top-0 left-0 right-0 z-50 w-screen">
+    <nav className="fixed top-0 left-0 right-0 z-50 w-screen bg-slate-300">
       <div className="container flex h-16 items-center justify-between mx-auto">
         <Link href="/" className="flex items-center space-x-2">
           <span className="sr-only">Your Company Logo</span>
