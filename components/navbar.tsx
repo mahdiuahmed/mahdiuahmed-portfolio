@@ -2,39 +2,49 @@
 
 import * as React from "react";
 import Link from "next/link";
-import { Menu } from "lucide-react";
+import { Code, Menu, PenTool, User } from "lucide-react";
+import logo from "../public/mahdi logo png.png";
 
 import { Button } from "@/components/ui/button";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
+import Image from "next/image";
+import { ModeToggle } from "./mode-toggle";
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = React.useState(false);
 
   return (
-    <nav className="fixed top-0 left-0 right-0 z-50 w-screen bg-slate-300">
-      <div className="container flex h-16 items-center justify-between mx-auto">
-        <Link href="/" className="flex items-center space-x-2">
-          <span className="sr-only">Your Company Logo</span>
-          <img
-            src="/placeholder.svg?height=32&width=32"
-            alt=""
-            className="h-8 w-8"
-            width={32}
-            height={32}
-          />
-          <span className="text-xl font-bold">YourBrand</span>
+    <nav className="fixed top-0 left-0 right-0 z-50 w-screen border-b-2 backdrop-blur-md">
+      <div className="container flex h-16 items-center justify-between mx-auto px-4">
+        <Link href="/" className="dark:invert h-full flex items-center ">
+          <Image src={logo} alt="" height={64} width={64} />
         </Link>
-        <div className="hidden md:flex md:items-center md:space-x-4">
-          <Button variant="ghost" asChild>
-            <Link href="/about">About</Link>
+        <div className="hidden md:flex md:items-center md:space-x-4 ">
+          <Button className="flex font-bold" variant="ghost" asChild>
+            <Link href="/about">
+              <User size="icon" />
+              About Me
+            </Link>
           </Button>
-          <Button variant="ghost" asChild>
-            <Link href="/projects">Projects</Link>
+          <Button className="font-bold" variant="ghost" asChild>
+            <Link href="/programming">
+              <Code size="icon" />
+              Programming Projects
+            </Link>
           </Button>
-          <Button asChild>
-            <Link href="/contact">Contact</Link>
+          <Button className="font-bold" variant="ghost" asChild>
+            <Link href="/graphics">
+              <PenTool size="icon" />
+              Graphics Projects
+            </Link>
           </Button>
         </div>
+        <Button asChild className="hidden md:block font-bold uppercase">
+          <Link href="/contact" className="">
+            Contact
+          </Link>
+        </Button>
+        {/* <ModeToggle /> */}
         <Sheet open={isOpen} onOpenChange={setIsOpen}>
           <SheetTrigger asChild>
             <Button
@@ -54,22 +64,32 @@ export default function Navbar() {
                 className="block px-2 py-1 text-lg"
                 onClick={() => setIsOpen(false)}
               >
-                About
+                About Me
               </Link>
               <Link
                 href="/projects"
                 className="block px-2 py-1 text-lg"
                 onClick={() => setIsOpen(false)}
               >
-                Projects
+                Programming Projects
               </Link>
               <Link
                 href="/contact"
                 className="block px-2 py-1 text-lg"
                 onClick={() => setIsOpen(false)}
               >
-                Contact
+                Graphics Projects
               </Link>
+              <Button asChild className=" font-bold uppercase">
+                <Link
+                  href="/contact"
+                  className="block px-2 py-1 text-lg"
+                  onClick={() => setIsOpen(false)}
+                >
+                  Contact
+                </Link>
+              </Button>
+              {/* <ModeToggle /> */}
             </nav>
           </SheetContent>
         </Sheet>

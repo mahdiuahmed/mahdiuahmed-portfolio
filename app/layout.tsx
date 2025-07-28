@@ -1,29 +1,21 @@
 import type { Metadata } from "next";
 import Navbar from "@/components/navbar";
 import "./globals.css";
-// const geistSans = localFont({
-//   src: "./fonts/GeistVF.woff",
-//   variable: "--font-geist-sans",
-//   weight: "100 900",
-// });
-// const geistMono = localFont({
-//   src: "./fonts/GeistMonoVF.woff",
-//   variable: "--font-geist-mono",
-//   weight: "100 900",
-// });
-// const nexus = localFont({
-//   src: "./fonts/Nexusbold-Regular.otf",
-//   variable: "--font-nexus",
-// });
-
-import { Space_Grotesk } from "next/font/google";
+import { Space_Grotesk, Changa } from "next/font/google";
+import Footer from "@/components/footer";
+import Head from "next/head";
+import { ThemeProvider } from "@/components/theme-provider";
 
 const space_grotesk = Space_Grotesk({
   subsets: ["latin"],
 });
 
+const changa = Changa({
+  subsets: ["arabic"],
+});
+
 export const metadata: Metadata = {
-  title: "Mahdi Ahmed",
+  title: "Mahdi - Designer & Developer",
   description: "Coming Soon",
 };
 
@@ -33,16 +25,31 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="en" suppressHydrationWarning>
       <link
         rel="icon"
         href="/icon?<generated>"
         type="image/png"
         sizes="32x32"
       />
-      <body className={`${space_grotesk.className}  antialiased`}>
-        {/* <Navbar /> */}
+      <Head>
+        <meta name="viewport" content="viewport-fit=cover" />
+      </Head>
+      <body
+        className={`${space_grotesk.className}  antialiased  overflow-x-hidden`}
+      >
+        {/* <ThemeProvider
+          attribute="class"
+          defaultTheme="system"
+          enableSystem
+          disableTransitionOnChange
+        > */}
+        {/* <div className="turbulence-bg w-screen h-screen" /> */}
+        <Navbar />
         <main className="">{children}</main>
+        <Footer />
+        {/* <div className="fixed top-0 left-0 right-0 opacity-20 mx-auto h-screen w-[1440px] bg-red-300" /> */}
+        {/* </ThemeProvider> */}
       </body>
     </html>
   );
