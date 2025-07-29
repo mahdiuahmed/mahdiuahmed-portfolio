@@ -1,11 +1,10 @@
-@import url('https://fonts.googleapis.com/css2?family=Changa:wght@200..800&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
-@import 'tailwindcss';
-@import 'tw-animate-css';
-
+@import url("https://fonts.googleapis.com/css2?family=Changa:wght@200..800&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap");
+/* @import "tailwindcss"; */
+/* @import "tw-animate-css"; */
 @custom-variant dark (&:where(class, class *));
 
-@theme {
+/* @theme {
   --font-changa: Changa;
   --font-bebas: Bebas Neue;
 
@@ -46,7 +45,7 @@
   --radius-lg: var(--radius);
   --radius-md: calc(var(--radius) - 2px);
   --radius-sm: calc(var(--radius) - 4px);
-}
+} */
 
 @theme inline {
   --color-background: var(--background);
@@ -235,7 +234,7 @@ body {
     @apply bg-background text-foreground;
   }
   h1 {
-    @apply text-4xl;
+    @apply text;
   }
   h2 {
     @apply text-3xl;
