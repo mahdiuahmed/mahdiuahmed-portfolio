@@ -1,158 +1,224 @@
-import { Asterisk, CircleArrowDown, Code, PenTool, User } from "lucide-react";
+import { ArrowDownFromLine, Asterisk, Code, PenTool, User } from "lucide-react";
 import Link from "next/link";
-// import { RiNextjsFill } from '@react-icons/all-files/ri/RiNetflixFill';
-
 import { Bebas_Neue } from "next/font/google";
-import Image from "next/image";
-import { PortfolioCard } from "@/components/card";
-import ContactForm from "@/components/contact-form";
 import { Button } from "@/components/ui/button";
-import { FirebaseMasonryGallery } from "@/components/firebase-masonry-gallery";
+import FadeContent from "@/components/FadeContent/FadeContent";
+import AnimatedContent from "@/components/AnimatedContent/AnimatedContent";
+import AboutMe from "@/components/about-me";
+import Programming from "@/components/programming";
 
-const bebas_neue = Bebas_Neue({
-  subsets: ["latin"],
-  weight: ["400"],
-});
+import ContactMe from "@/components/contact-me";
+import GraphicsPage from "@/components/graphics";
+import Image from "next/image";
+import bgImg from "@/public/arabic-calligraphy-wallpaper-wall-with-brown-background-old-paper-interlacing-translate-arabic-letters.jpg";
+import {
+  Tooltip,
+  TooltipContent,
+  TooltipProvider,
+  TooltipTrigger,
+} from "@/components/ui/tooltip";
+import { Separator } from "@/components/ui/separator";
+import Navbar from "@/components/navbar";
+import Footer from "@/components/footer";
+import { BackgroundBeams } from "@/components/ui/shadcn-io/background-beams";
+
 export default function Home() {
+  // useLayoutEffect(() => {
+  //   window.scrollTo(0, 0);
+  // }, []); // The empty array ensures this only runs on the initial mount
   return (
-    <main className="mt-36 min-h-screen flex flex-col items-center justify-center px-8 max-sm:px-4 space-y-36">
-      <header className=" flex flex-col items-center">
-        <div className="flex flex-col">
-          <div className="-mb-1 max-sm:mb-1 p-6 bg-primary text-black self-end max-sm:p-4">
-            <h1 className="font-bold font-changa text-end max-sm:text-3xl ">
-              مهدي أحمد
-            </h1>
-          </div>
-          <h1
-            className={`text-[200px] max-sm:text-[90px] leading-none text-center font-bold tracking-tight uppercase ${bebas_neue.className}`}
-          >
-            Mahdi Ahmed
-          </h1>
-        </div>
-        <div className="flex mb-7 items-center space-x-2">
-          <Asterisk size={40} className="max-sm:w-8" />
-          <h1 className="border-b-4 font-medium max-sm:text-2xl">
-            Designer & Developer
-          </h1>
-          <Asterisk size={40} className="max-sm:w-8" />
-        </div>
-        <h3 className="mb-12 text-center max-w-screen-md tracking-tighter max-sm:text-lg ">
-          Hi, I’m Mahdi — a full-stack developer. With over six years of
-          experience building web and mobile applications, I specialise in
-          modern JavaScript frameworks, UI/UX design, testing and DevOps
-          practices.
-        </h3>
-        <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-          {/* <h3>Explore</h3> */}
+    <>
+      <Navbar />
+      {/* <div className="relative z-50">
+        <div className="flex flex-col space-y-4 fixed left-12 bottom-12">
           <Button className="flex font-bold" asChild>
-            <Link href="/about">
+            <Link href="#about">
               <User size="icon" />
-              About Me
             </Link>
           </Button>
           <Button className="font-bold" asChild>
-            <Link href="/programming">
+            <Link href="#programming">
               <Code size="icon" />
-              Programming Projects
             </Link>
           </Button>
           <Button className="font-bold" asChild>
-            <Link href="/graphics">
+            <Link href="#graphics">
               <PenTool size="icon" />
-              Graphics Projects
             </Link>
           </Button>
         </div>
-      </header>
+      </div> */}
 
-      <main className="container mx-auto px-4">
-        <div className="max-w-3xl mx-auto">
-          <div className="text-center mb-10">
-            <h1 className="text-3xl font-bold tracking-tight sm:text-4xl mb-2">
-              Get in Touch
-            </h1>
-            <p className="text-muted-foreground max-w-md mx-auto">
-              Have a question or want to work together? Fill out the form below
-              and I'll get back to you as soon as possible.
-            </p>
-          </div>
+      <main className="px-8 md:px-12 lg:px-24 mx-auto">
+        <main className=" min-h-screen flex items-center justify-center ">
+          {/* <Image
+            src={bgImg}
+            alt=""
+            fill
+            className="z-0 mix-blend-overlay opacity-25"
+          /> */}
+          {/* <main className=" mt-36 "> */}
+          <FadeContent
+            blur={true}
+            duration={900}
+            easing="ease-out"
+            initialOpacity={0}
+          >
+            {/* Anything placed inside this container will be fade into view */}
 
-          <div className="grid md:grid-cols-3 gap-6 mb-10">
-            <div className="flex flex-col items-center text-center p-4 rounded-lg border bg-card">
-              <div className="bg-primary/10 p-3 rounded-full mb-3">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="24"
-                  height="24"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                  strokeWidth="2"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  className="text-primary h-6 w-6"
+            <header className="flex ">
+              <div className="flex flex-col">
+                <AnimatedContent
+                  distance={80}
+                  direction="vertical"
+                  reverse={false}
+                  duration={1}
+                  ease="power3.out"
+                  initialOpacity={0}
+                  animateOpacity
+                  scale={1}
+                  threshold={0.2}
+                  delay={0.2}
                 >
-                  <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z" />
-                </svg>
-              </div>
-              <h3 className="font-medium">Phone</h3>
-              <p className="text-sm text-muted-foreground mt-1">
-                +44 7305 682459
-              </p>
-            </div>
-
-            <div className="flex flex-col items-center text-center p-4 rounded-lg border bg-card">
-              <div className="bg-primary/10 p-3 rounded-full mb-3">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="24"
-                  height="24"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                  strokeWidth="2"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  className="text-primary h-6 w-6"
+                  <div className="flex flex-col w-fit mx-auto">
+                    <div className="min-[660px]:-mb-1 p-3 min-[660px]:p-6 bg-primary w-fit self-end ">
+                      <h1 className="font-bold font-changa text-end min-[660px]:text-3xl text-lg text-background ">
+                        مهدي أحمد
+                      </h1>
+                    </div>
+                    <h1 className="text-6xl min-[350px]:text-7xl min-[446px]:text-8xl min-[660px]:text-[150px] lg:text-[200px] leading-none text-center tracking-tight font-bebas-neue ">
+                      Mahdi Ahmed
+                    </h1>
+                    <AnimatedContent
+                      distance={80}
+                      direction="vertical"
+                      reverse={false}
+                      duration={1}
+                      ease="power3.out"
+                      initialOpacity={0}
+                      animateOpacity
+                      scale={1}
+                      threshold={0.2}
+                      delay={0.4}
+                    >
+                      <h3 className="min-[660px]:-mt-2 text-center lg:max-w-[794px] min-[660px]:max-w-[593px] max-w-[237px] min-[350px]:max-w-[284px] min-[446px]:max-w-[380px] mt-2 text-lg min-[660px]:text-2xl tracking-tighter font-sans mx-auto  ">
+                        Hi, I’m Mahdi — a multimedia designer and full-stack
+                        developer. I specialise in modern JavaScript frameworks,
+                        QA testing and DevOps practices. Feel free to check the
+                        rest of my portfolio below.
+                      </h3>
+                    </AnimatedContent>
+                  </div>
+                </AnimatedContent>
+                {/* <AnimatedContent
+                  distance={80}
+                  direction="vertical"
+                  reverse={false}
+                  duration={1}
+                  ease="power3.out"
+                  initialOpacity={0}
+                  animateOpacity
+                  scale={1}
+                  threshold={0.2}
+                  delay={0.4}
                 >
-                  <rect width="20" height="16" x="2" y="4" rx="2" />
-                  <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7" />
-                </svg>
-              </div>
-              <h3 className="font-medium">Email</h3>
-              <p className="text-sm text-muted-foreground mt-1">
-                imahdiahmed01@gmail.com
-              </p>
-            </div>
-
-            <div className="flex flex-col items-center text-center p-4 rounded-lg border bg-card">
-              <div className="bg-primary/10 p-3 rounded-full mb-3">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="24"
-                  height="24"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                  strokeWidth="2"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  className="text-primary h-6 w-6"
+                  <div className=" mb-7 ">
+                    <Asterisk size={40} className="max-sm:w-8" />
+                    <h1 className="font-bebas-neue border-b-4 w-fit border-accent mx-auto text-5xl  text-center  max-sm:text-2xl">
+                      Designer & Developer
+                    </h1>
+                    <Asterisk size={40} className="max-sm:w-8" />
+                  </div>
+                </AnimatedContent> */}
+                <AnimatedContent
+                  distance={40}
+                  direction="vertical"
+                  reverse={false}
+                  duration={1}
+                  ease="power3.out"
+                  initialOpacity={0}
+                  animateOpacity
+                  scale={1}
+                  threshold={0.2}
+                  delay={0.8}
                 >
-                  <path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z" />
-                  <circle cx="12" cy="10" r="3" />
-                </svg>
+                  <div className="lg:max-w-[794px] min-[660px]:max-w-[593px] max-w-[386px] flex items-center mt-6 justify-end space-x-6 ">
+                    <div className="p-1 w-full bg-primary"></div>
+                    <Button
+                      className="flex font-bold w-fit self-end animate"
+                      variant="outline"
+                      asChild
+                    >
+                      <Link href="#about" className="relative">
+                        <ArrowDownFromLine />
+                        Explore Portfolio
+                        <div className="p-2 rounded-full opacity-75 animate-ping bg-primary absolute -top-1 -right-1"></div>
+                        <div className="p-2 rounded-full bg-primary absolute -top-1 -right-1"></div>
+                      </Link>
+                    </Button>
+                  </div>
+                  {/* <div className="mt-12 grid gap-6 min-[660px]:grid-cols-3 grid-cols-1 lg:max-w-[794px] min-[660px]:max-w-[593px] max-w-[386px]">
+                    <Button className="flex font-bold text-sm" asChild>
+                      <Link href="#about">
+                        <User size="icon" />
+                        About Me
+                      </Link>
+                    </Button>
+                    <Button className="font-bold" asChild>
+                      <Link href="#programming">
+                        <Code size="icon" />
+                        Programming Projects
+                      </Link>
+                    </Button>
+                    <Button className="font-bold" asChild>
+                      <Link href="#graphics">
+                        <PenTool size="icon" />
+                        Graphics Projects
+                      </Link>
+                    </Button>
+                  </div> */}
+                </AnimatedContent>
               </div>
-              <h3 className="font-medium">Location</h3>
-              <p className="text-sm text-muted-foreground mt-1">London, UK</p>
-            </div>
-          </div>
+            </header>
+          </FadeContent>
+        </main>
 
-          <div className="bg-card border rounded-xl p-6 md:p-8 shadow-sm">
-            <ContactForm />
-          </div>
+        {/* ABOUT ME */}
+        <FadeContent
+          blur={true}
+          duration={900}
+          easing="ease-out"
+          initialOpacity={0}
+        >
+          <AboutMe />
+        </FadeContent>
+        <div className="space-y-40 mt-40">
+          {/* PROGRAMMING */}
+          <FadeContent
+            blur={true}
+            duration={900}
+            easing="ease-out"
+            initialOpacity={0}
+          >
+            <Programming />
+          </FadeContent>
+
+          {/* GRAPHICS */}
+
+          <GraphicsPage />
+
+          {/* CONTACT ME */}
+          <FadeContent
+            blur={true}
+            duration={900}
+            easing="ease-out"
+            initialOpacity={0}
+          >
+            <ContactMe />
+          </FadeContent>
         </div>
       </main>
-    </main>
+      <Footer />
+    </>
   );
 }

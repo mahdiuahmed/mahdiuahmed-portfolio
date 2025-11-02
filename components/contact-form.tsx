@@ -97,7 +97,7 @@ export default function ContactForm() {
   }
 
   return (
-    <div className="w-full max-w-2xl mx-auto">
+    <div className="w-full max-w-7xl mx-auto">
       <div className="space-y-6">
         <div>
           <h2 className="text-2xl font-bold">Contact Me</h2>
@@ -106,37 +106,6 @@ export default function ContactForm() {
             possible.
           </p>
         </div>
-
-        {/* Status messages */}
-        {submitStatus === "success" && (
-          <div className="bg-green-50 border border-green-200 rounded-lg p-4 flex items-start gap-3 dark:bg-green-950/30 dark:border-green-900">
-            <CheckCircle2 className="h-5 w-5 text-green-600 dark:text-green-400 mt-0.5" />
-            <div>
-              <h3 className="font-medium text-green-800 dark:text-green-300">
-                Message sent successfully!
-              </h3>
-              <p className="text-green-700 dark:text-green-400 text-sm mt-1">
-                Thank you for reaching out. I'll get back to you as soon as
-                possible.
-              </p>
-            </div>
-          </div>
-        )}
-
-        {submitStatus === "error" && (
-          <div className="bg-red-50 border border-red-200 rounded-lg p-4 flex items-start gap-3 dark:bg-red-950/30 dark:border-red-900">
-            <XCircle className="h-5 w-5 text-red-600 dark:text-red-400 mt-0.5" />
-            <div>
-              <h3 className="font-medium text-red-800 dark:text-red-300">
-                Something went wrong
-              </h3>
-              <p className="text-red-700 dark:text-red-400 text-sm mt-1">
-                {errorMessage ||
-                  "There was an error sending your message. Please try again or contact me directly."}
-              </p>
-            </div>
-          </div>
-        )}
 
         <Form {...form}>
           <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6">
@@ -148,7 +117,7 @@ export default function ContactForm() {
                   <FormItem>
                     <FormLabel>Full Name</FormLabel>
                     <FormControl>
-                      <Input placeholder="John Doe" {...field} />
+                      <Input placeholder="" {...field} />
                     </FormControl>
                     <FormMessage />
                   </FormItem>
@@ -161,11 +130,7 @@ export default function ContactForm() {
                   <FormItem>
                     <FormLabel>Email</FormLabel>
                     <FormControl>
-                      <Input
-                        placeholder="john.doe@example.com"
-                        type="email"
-                        {...field}
-                      />
+                      <Input placeholder="" type="email" {...field} />
                     </FormControl>
                     <FormMessage />
                   </FormItem>
@@ -186,11 +151,7 @@ export default function ContactForm() {
                       </span>
                     </FormLabel>
                     <FormControl>
-                      <Input
-                        placeholder="+1 (555) 123-4567"
-                        type="tel"
-                        {...field}
-                      />
+                      <Input placeholder="" type="tel" {...field} />
                     </FormControl>
                     <FormMessage />
                   </FormItem>
@@ -265,6 +226,35 @@ export default function ContactForm() {
                 </>
               )}
             </Button>
+            {/* Status messages */}
+            {submitStatus === "success" && (
+              <div className="bg-green-50 border border-green-200 rounded-lg p-4 flex items-start gap-3 dark:bg-green-950/30 dark:border-green-900">
+                <CheckCircle2 className="h-5 w-5 text-green-600 dark:text-green-400 mt-0.5" />
+                <div>
+                  <h3 className="font-medium text-green-800 dark:text-green-300">
+                    Message sent successfully!
+                  </h3>
+                  <p className="text-green-700 dark:text-green-400 text-sm mt-1">
+                    Thank you for reaching out. I'll get back to you as soon as
+                    possible.
+                  </p>
+                </div>
+              </div>
+            )}
+            {submitStatus === "error" && (
+              <div className="bg-red-50 border border-red-200 rounded-lg p-4 flex items-start gap-3 dark:bg-red-950/30 dark:border-red-900">
+                <XCircle className="h-5 w-5 text-red-600 dark:text-red-400 mt-0.5" />
+                <div>
+                  <h3 className="font-medium text-red-800 dark:text-red-300">
+                    Something went wrong
+                  </h3>
+                  <p className="text-red-700 dark:text-red-400 text-sm mt-1">
+                    {errorMessage ||
+                      "There was an error sending your message. Please try again or contact me directly."}
+                  </p>
+                </div>
+              </div>
+            )}
           </form>
         </Form>
       </div>
