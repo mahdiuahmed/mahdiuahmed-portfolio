@@ -139,7 +139,7 @@ export default function Navbar() {
                   <Button
                     asChild
                     className="font-bold uppercase z-50 w-1/2 -mt-6"
-                    variant="destructive"
+                    variant="outline"
                   >
                     <Link
                       href="/Mahdi Ahmed - Developer Resume.pdf"

@@ -37,7 +37,7 @@ export default async function GraphicsPage() {
 
               {/* Main Title */}
               <div className="space-y-4">
-                <h1 className="font-bold text-5xl md:text-6xl lg:text-7xl xl:text-8xl  tracking-tight">
+                <h1 className="font-bold text-5xl md:text-6xl lg:text-7xl xl:text-8xl tracking-tight">
                   Graphics
                   <span className="block text-primary">Projects</span>
                 </h1>

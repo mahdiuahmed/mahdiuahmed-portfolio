@@ -1,37 +1,8 @@
 "use client";
 
 import React from "react";
-import Image from "next/image";
-import heroimage from "../public/me image.jpeg";
-import { Card, CardHeader, CardTitle, CardContent } from "@/components/ui/card";
-import { Separator } from "@radix-ui/react-dropdown-menu";
-import {
-  Mail,
-  Github,
-  Linkedin,
-  Palette,
-  Twitter,
-  Sun,
-  Car,
-  Star,
-  ArrowDownRight,
-} from "lucide-react";
-import { Badge } from "@/components/ui/badge";
-import Link from "next/link";
-import FadeContent from "@/components/FadeContent/FadeContent";
-import { motion } from "framer-motion";
-import {
-  SiNextdotjs,
-  SiReact,
-  SiTailwindcss,
-  SiFirebase,
-  SiPostgresql,
-  SiAmazonwebservices,
-  SiDocker,
-  SiGit,
-  SiShadcnui,
-} from "react-icons/si";
-import { Button } from "./ui/button";
+import { Blocks, Box, Bug, CloudCog, Code, Sun } from "lucide-react";
+import { Badge } from "./ui/badge";
 
 interface AboutMeProps {
   heading?: string;
@@ -57,8 +28,8 @@ interface AboutMeProps {
 }
 
 export default function AboutMe({
-  heading = "About Me",
-  description = "Hi, I'm Mahdi — a multimedia designer and full-stack developer. I specialise in modern JavaScript frameworks, QA testing and DevOps practices. Feel free to check the rest of my portfolio below. I bridge the gap between beautiful design and robust engineering.",
+  heading = "About",
+  description = "Hi, I'm Mahdi — a multimedia designer and full-stack developer. I specialise in modern JavaScript frameworks, QA testing and DevOps practices. Feel free to check the rest of my portfolio below. I bridge the gap between beautiful design and robust engineering. Check out the technologies I use often below:",
   buttons = {
     primary: {
       text: "Sign Up",
@@ -98,69 +69,113 @@ export default function AboutMe({
 }: AboutMeProps) {
   const features = [
     {
-      icon: <Sun className="h-auto w-5" />,
+      icon: <Code className="h-auto w-5" />,
       title: "Programming Languages",
-      description: "Python, Java, TypeScript, JavaScript, HTML, CSS, SQL, PHP",
+      description: [
+        "Python",
+        "Java",
+        "TypeScript",
+        "JavaScript",
+        "HTML",
+        "CSS",
+        "SQL",
+        "PHP",
+      ],
     },
     {
-      icon: <Sun className="h-auto w-5" />,
+      icon: <Blocks className="h-auto w-5" />,
       title: "Libraries / Frameworks",
-      description:
-        "Node.js, React.js, Next.js, React Native, Flask, Tailwind CSS, FastAPI",
+      description: [
+        "Node.js",
+        "React.js",
+        "Next.js",
+        "React Native",
+        "Flask",
+        "Tailwind CSS",
+        "FastAPI",
+      ],
     },
     {
-      icon: <Sun className="h-auto w-5" />,
+      icon: <Box className="h-auto w-5" />,
       title: "Database Systems",
-      description: "PostgreSQL, Supabase, DynamoDB, Firebase Firestore, MySQL",
+      description: [
+        "PostgreSQL",
+        "Supabase",
+        "DynamoDB",
+        "Firebase Firestore",
+        "MySQL",
+      ],
     },
     {
-      icon: <Sun className="h-auto w-5" />,
+      icon: <Bug className="h-auto w-5" />,
       title: "QA Testing",
-      description:
-        "BDD, TDD, E2E, Selenium Grid, noVNC, Pytest, Mocha, Chai, Sinon, Vitest, Cypress, Jest, Cucumber, Gherkin",
+      description: [
+        "BDD",
+        "TDD",
+        "E2E",
+        "Selenium Grid",
+        "noVNC",
+        "Pytest",
+        "Mocha",
+        "Chai",
+        "Sinon",
+        "Vitest",
+        "Cypress",
+        "Jest",
+        "Cucumber",
+        "Gherkin",
+      ],
     },
     {
-      icon: <Sun className="h-auto w-5" />,
+      icon: <CloudCog className="h-auto w-5" />,
       title: "Cloud & DevOps",
-      description:
-        "AWS: IAM EC2, S3, Lambda, ECR Google Cloud: Firebase (Auth, Hosting, Storage) Tools: Docker, Git, GitHub Actions, Linux, Jenkins, Prometheus, Jira, Confluence, Checkov, Grafana, REST API",
+      description: [
+        "AWS: IAM EC2, S3, Lambda, ECR Google Cloud",
+        "Firebase (Auth, Hosting, Storage)",
+        "Docker",
+        "Git",
+        "GitHub Actions",
+        "Linux",
+        "Jenkins",
+        "Prometheus",
+        "Jira",
+        "Confluence",
+        "Checkov",
+        "Grafana",
+        "REST API",
+      ],
     },
   ];
 
   return (
-    <main id="about" className="scroll-mt-32 gap-16">
-      {/* <main className="mt-36 min-h-screen"> */}
-      {/* Anything placed inside this container will be fade into view */}
-
-      {/* <section className="mb-16 ">
-        <div className="max-w-7xl mx-auto">
-          <div className="text-center space-y-4">
-            <div className="space-y-4">
-              <h1 className="font-bold text-5xl md:text-6xl lg:text-7xl xl:text-8xl tracking-tight">
-                About
-                <span className="block text-primary">Myself</span>
-              </h1>
-            </div>
-          </div>
-        </div>
-      </section> */}
-
+    <main id="about" className="max-w-7xl mx-auto scroll-mt-32 gap-16">
       <section>
         <div className="container grid items-center gap-10 lg:grid-cols-2 lg:gap-20 mx-auto">
-          <div className="mx-auto flex flex-col items-center text-center md:ml-auto lg:max-w-3xl lg:items-start lg:text-left">
-            <h1 className="my-6 text-primary text-pretty md:text-6xl font-bold lg:text-7xl xl:text-8xl tracking-tight">
+          <div className="space-y-4 mx-auto flex flex-col items-center text-center md:ml-auto lg:max-w-3xl lg:items-start lg:text-left">
+            <h1 className=" mt-6 font-bold text-5xl md:text-6xl lg:text-7xl xl:text-8xl tracking-tight">
               {heading}
+              <span className="text-primary"> Me</span>
             </h1>
-            <p className="text-muted-foreground mb-8 max-w-xl lg:text-xl">
-              {description}
-            </p>
+            <p className="mb-8 max-w-xl">{description}</p>
+            <ul className="space-y-4">
+              {features.map((feature) => (
+                <li className="">
+                  <p className="flex items-center gap-2">
+                    {feature.icon} {feature.title}
+                  </p>
+                  {feature.description.map((desc) => (
+                    <Badge className="mr-1">{desc}</Badge>
+                  ))}
+                </li>
+              ))}
+            </ul>
             <div className="mb-12 flex w-fit flex-col items-center gap-4 sm:flex-row"></div>
           </div>
-          <div className="flex max-h-[600px] lg:max-h-[800px] overflow-hidden">
+          <div className="flex max-h-[600px] lg:max-h-[800px] overflow-hidden rounded-xl shadow-2xl">
             <img
               src="/me image.jpeg"
               alt="placeholder hero"
-              className="grayscale-100 -mt-60 w-full rounded-md object-cover"
+              className="grayscale-100 w-full object-cover"
             />
           </div>
         </div>
