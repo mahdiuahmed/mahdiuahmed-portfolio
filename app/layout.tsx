@@ -32,8 +32,8 @@ const bebas_neue = Bebas_Neue({
 });
 
 export const metadata: Metadata = {
-  title: "Mahdi - Designer & Developer",
-  description: "Coming Soon",
+  title: "Mahdi - Developer & Designer",
+  description: "Welcome To My World",
 };
 
 export default function RootLayout({
