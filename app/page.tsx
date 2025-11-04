@@ -23,49 +23,18 @@ import Footer from "@/components/footer";
 import { BackgroundBeams } from "@/components/ui/shadcn-io/background-beams";
 
 export default function Home() {
-  // useLayoutEffect(() => {
-  //   window.scrollTo(0, 0);
-  // }, []); // The empty array ensures this only runs on the initial mount
   return (
     <>
       <Navbar />
-      {/* <div className="relative z-50">
-        <div className="flex flex-col space-y-4 fixed left-12 bottom-12">
-          <Button className="flex font-bold" asChild>
-            <Link href="#about">
-              <User size="icon" />
-            </Link>
-          </Button>
-          <Button className="font-bold" asChild>
-            <Link href="#programming">
-              <Code size="icon" />
-            </Link>
-          </Button>
-          <Button className="font-bold" asChild>
-            <Link href="#graphics">
-              <PenTool size="icon" />
-            </Link>
-          </Button>
-        </div>
-      </div> */}
 
       <main className="px-8 md:px-12 lg:px-24 mx-auto">
         <main className=" min-h-screen flex items-center justify-center ">
-          {/* <Image
-            src={bgImg}
-            alt=""
-            fill
-            className="z-0 mix-blend-overlay opacity-25"
-          /> */}
-          {/* <main className=" mt-36 "> */}
           <FadeContent
             blur={true}
             duration={900}
             easing="ease-out"
             initialOpacity={0}
           >
-            {/* Anything placed inside this container will be fade into view */}
-
             <header className="flex ">
               <div className="flex flex-col">
                 <AnimatedContent
@@ -110,26 +79,6 @@ export default function Home() {
                     </AnimatedContent>
                   </div>
                 </AnimatedContent>
-                {/* <AnimatedContent
-                  distance={80}
-                  direction="vertical"
-                  reverse={false}
-                  duration={1}
-                  ease="power3.out"
-                  initialOpacity={0}
-                  animateOpacity
-                  scale={1}
-                  threshold={0.2}
-                  delay={0.4}
-                >
-                  <div className=" mb-7 ">
-                    <Asterisk size={40} className="max-sm:w-8" />
-                    <h1 className="font-bebas-neue border-b-4 w-fit border-accent mx-auto text-5xl  text-center  max-sm:text-2xl">
-                      Designer & Developer
-                    </h1>
-                    <Asterisk size={40} className="max-sm:w-8" />
-                  </div>
-                </AnimatedContent> */}
                 <AnimatedContent
                   distance={40}
                   direction="vertical"
@@ -157,26 +106,6 @@ export default function Home() {
                       </Link>
                     </Button>
                   </div>
-                  {/* <div className="mt-12 grid gap-6 min-[660px]:grid-cols-3 grid-cols-1 lg:max-w-[794px] min-[660px]:max-w-[593px] max-w-[386px]">
-                    <Button className="flex font-bold text-sm" asChild>
-                      <Link href="#about">
-                        <User size="icon" />
-                        About Me
-                      </Link>
-                    </Button>
-                    <Button className="font-bold" asChild>
-                      <Link href="#programming">
-                        <Code size="icon" />
-                        Programming Projects
-                      </Link>
-                    </Button>
-                    <Button className="font-bold" asChild>
-                      <Link href="#graphics">
-                        <PenTool size="icon" />
-                        Graphics Projects
-                      </Link>
-                    </Button>
-                  </div> */}
                 </AnimatedContent>
               </div>
             </header>

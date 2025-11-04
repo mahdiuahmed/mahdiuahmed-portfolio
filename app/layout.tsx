@@ -69,7 +69,135 @@ export default function RootLayout({
         > */}
         {/* <div className="turbulence-bg w-screen h-screen" /> */}
 
-        <main className="">{children}</main>
+        <main className="">
+          {children}
+          {/* <svg
+            className="fixed inset-0 w-screen mix-blend-overlay z-50 pointer-events-none"
+            xmlns="http://www.w3.org/2000/svg"
+            version="1.1"
+            viewBox="0 0 700 700"
+          >
+            <defs>
+              <filter
+                id="nnnoise-filter"
+                x="-20%"
+                y="-20%"
+                width="140%"
+                height="140%"
+                filterUnits="objectBoundingBox"
+                primitiveUnits="userSpaceOnUse"
+                color-interpolation-filters="linearRGB"
+              >
+                <feTurbulence
+                  type="fractalNoise"
+                  baseFrequency="0.182"
+                  numOctaves="4"
+                  seed="15"
+                  stitchTiles="stitch"
+                  x="0%"
+                  y="0%"
+                  width="100%"
+                  height="100%"
+                  result="turbulence"
+                ></feTurbulence>
+                <feSpecularLighting
+                  surfaceScale="40"
+                  specularConstant="3"
+                  specularExponent="20"
+                  lighting-color="hsl(0, 0%, 100%)"
+                  x="0%"
+                  y="0%"
+                  width="100%"
+                  height="100%"
+                  in="turbulence"
+                  result="specularLighting"
+                >
+                  <feDistantLight azimuth="3" elevation="1"></feDistantLight>
+                </feSpecularLighting>
+                <feColorMatrix
+                  type="saturate"
+                  values="0"
+                  x="0%"
+                  y="0%"
+                  width="100%"
+                  height="100%"
+                  in="specularLighting"
+                  result="colormatrix"
+                ></feColorMatrix>
+              </filter>
+            </defs>
+            <rect width="700" height="700" fill="hsla(0, 0%, 50%, 1.00)"></rect>
+            <rect
+              width="700"
+              height="700"
+              fill="hsl(0, 0%, 100%)"
+              filter="url(#nnnoise-filter)"
+            ></rect>
+          </svg> */}
+          {/* <svg
+            className="fixed inset-0 w-screen mix-blend-overlay z-50 pointer-events-none"
+            xmlns="http://www.w3.org/2000/svg"
+            version="1.1"
+            viewBox="0 0 700 700"
+          >
+            <defs>
+              <filter
+                id="nnnoise-filter"
+                x="-20%"
+                y="-20%"
+                width="140%"
+                height="140%"
+                filterUnits="objectBoundingBox"
+                primitiveUnits="userSpaceOnUse"
+                colorInterpolationFilters="linearRGB"
+              >
+                <feTurbulence
+                  type="fractalNoise"
+                  baseFrequency="0.102"
+                  numOctaves="4"
+                  seed="15"
+                  stitchTiles="stitch"
+                  x="0%"
+                  y="0%"
+                  width="100%"
+                  height="100%"
+                  result="turbulence"
+                ></feTurbulence>
+                <feSpecularLighting
+                  surfaceScale="15"
+                  specularConstant="0.75"
+                  specularExponent="20"
+                  lightingColor="hsl(0, 0%, 100%)"
+                  x="0%"
+                  y="0%"
+                  width="100%"
+                  height="100%"
+                  in="turbulence"
+                  result="specularLighting"
+                >
+                  <feDistantLight azimuth="3" elevation="100"></feDistantLight>
+                </feSpecularLighting>
+                <feColorMatrix
+                  type="saturate"
+                  values="0"
+                  x="0%"
+                  y="0%"
+                  width="100%"
+                  height="100%"
+                  in="specularLighting"
+                  result="colormatrix"
+                ></feColorMatrix>
+              </filter>
+            </defs>
+            <rect width="700" height="700" fill="hsla(0, 0%, 50%, 1.00)"></rect>
+            <rect
+              width="100%"
+              height="100%"
+              fill="hsl(0, 0%, 50%)"
+              filter="url(#nnnoise-filter)"
+            ></rect>
+          </svg> */}
+        </main>
 
         {/* <div className="fixed top-0 left-0 right-0 opacity-20 mx-auto h-screen w-[1440px] bg-red-300" /> */}
         {/* </ThemeProvider> */}

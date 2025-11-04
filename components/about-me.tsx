@@ -3,6 +3,8 @@
 import React from "react";
 import { Blocks, Box, Bug, CloudCog, Code, Sun } from "lucide-react";
 import { Badge } from "./ui/badge";
+import Image from "next/image";
+import { Separator } from "./ui/separator";
 
 interface AboutMeProps {
   heading?: string;
@@ -29,7 +31,7 @@ interface AboutMeProps {
 
 export default function AboutMe({
   heading = "About",
-  description = "Hi, I'm Mahdi — a multimedia designer and full-stack developer. I specialise in modern JavaScript frameworks, QA testing and DevOps practices. Feel free to check the rest of my portfolio below. I bridge the gap between beautiful design and robust engineering. Check out the technologies I use often below:",
+  description = "My current work revolves around modern JavaScript frameworks, cloud integrations, and DevOps practices that keep projects scalable and maintainable. I enjoy crafting seamless front-end experiences with Next.js, Tailwind, and ShadCN, while automating the backend with Firebase, AWS, or Supabase.\n\nI’ve built everything from sleek task managers, to intelligent transcription apps powered by AI — always aiming for simplicity, performance, and delightful design.\n\nI believe great products aren’t just functional — they’re crafted with personality and purpose.",
   buttons = {
     primary: {
       text: "Sign Up",
@@ -156,26 +158,31 @@ export default function AboutMe({
               {heading}
               <span className="text-primary"> Me</span>
             </h1>
-            <p className="mb-8 max-w-xl">{description}</p>
-            <ul className="space-y-4">
-              {features.map((feature) => (
-                <li className="">
-                  <p className="flex items-center gap-2">
+            <p className="mb-8 whitespace-pre-line">{description}</p>
+            <Separator className="mb-8" />
+            <ul className="space-y-8">
+              {features.map((feature, i) => (
+                <li key={i} className="space-y-2">
+                  <p className="flex gap-2 p-2 bg-primary justify-center rounded-lg text-background font-bold">
                     {feature.icon} {feature.title}
                   </p>
-                  {feature.description.map((desc) => (
-                    <Badge className="mr-1">{desc}</Badge>
+                  {feature.description.map((desc, i) => (
+                    <Badge key={i} className="mr-1" variant="secondary">
+                      {desc}
+                    </Badge>
                   ))}
                 </li>
               ))}
             </ul>
             <div className="mb-12 flex w-fit flex-col items-center gap-4 sm:flex-row"></div>
           </div>
-          <div className="flex max-h-[600px] lg:max-h-[800px] overflow-hidden rounded-xl shadow-2xl">
-            <img
+          <div className="relative flex max-h-[600px] lg:max-h-[800px] overflow-hidden rounded-xl shadow-2xl">
+            <Image
+              width={0}
+              height={0}
               src="/me image.jpeg"
               alt="placeholder hero"
-              className="grayscale-100 w-full object-cover"
+              className="grayscale-100 w-full object-cover rounded-xl"
             />
           </div>
         </div>

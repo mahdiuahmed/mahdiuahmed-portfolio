@@ -28,8 +28,7 @@ export default function Programming({ className }: { className?: string }) {
         "OpenAI Whisper",
       ],
       imageUrl: "/image.png",
-      projectUrl: "https://zenith.example.com",
-      githubUrl: "www.github.com/mahdiuahmed",
+      projectUrl: "https://notavox.vercel.app/",
     },
     {
       title: "Software Quality Engineering & Observability Platform",
@@ -52,7 +51,8 @@ export default function Programming({ className }: { className?: string }) {
         "Jenkins",
       ],
       imageUrl: "/image copy 2.png",
-      githubUrl: "www.github.com/mahdiuahmed",
+      githubUrl:
+        "https://github.com/mahdiuahmed/Software-Quality-Engineering-Observability-Platform",
     },
     {
       title: "Uptime Monitor - Website Monitoring Service",
@@ -60,8 +60,8 @@ export default function Programming({ className }: { className?: string }) {
         "A real-time uptime monitoring platform that allows users to track the availability and performance of their websites. Built with a focus on reliability and user experience incorporating detailed performance analytics through an intuitive dashboard.",
       technologies: ["Next.js", "TailwindCSS", "Firebase"],
       imageUrl: "/image copy.png",
-      projectUrl: "https://zenith.example.com",
-      githubUrl: "www.github.com/mahdiuahmed",
+      projectUrl: "https://uptime-monitor-weld.vercel.app/",
+      // githubUrl: "https://github.com/mahdiuahmed/uptime-monitor",
     },
   ];
 
