@@ -1,6 +1,5 @@
-import { ArrowDownFromLine, Asterisk, Code, PenTool, User } from "lucide-react";
+import { ArrowDownFromLine } from "lucide-react";
 import Link from "next/link";
-import { Bebas_Neue } from "next/font/google";
 import { Button } from "@/components/ui/button";
 import FadeContent from "@/components/FadeContent/FadeContent";
 import AnimatedContent from "@/components/AnimatedContent/AnimatedContent";
@@ -9,25 +8,15 @@ import Programming from "@/components/programming";
 
 import ContactMe from "@/components/contact-me";
 import GraphicsPage from "@/components/graphics";
-import Image from "next/image";
-import bgImg from "@/public/arabic-calligraphy-wallpaper-wall-with-brown-background-old-paper-interlacing-translate-arabic-letters.jpg";
-import {
-  Tooltip,
-  TooltipContent,
-  TooltipProvider,
-  TooltipTrigger,
-} from "@/components/ui/tooltip";
-import { Separator } from "@/components/ui/separator";
 import Navbar from "@/components/navbar";
 import Footer from "@/components/footer";
-import { BackgroundBeams } from "@/components/ui/shadcn-io/background-beams";
 
 export default function Home() {
   return (
     <>
       <Navbar />
 
-      <main className="px-8 md:px-12 lg:px-24 mx-auto">
+      <main className="px-6 mx-auto">
         <main className=" min-h-screen flex items-center justify-center ">
           <FadeContent
             blur={true}
@@ -121,7 +110,7 @@ export default function Home() {
         >
           <AboutMe />
         </FadeContent>
-        <div className="space-y-40 mt-40">
+        <div className="space-y-36 mt-40">
           {/* PROGRAMMING */}
           <FadeContent
             blur={true}

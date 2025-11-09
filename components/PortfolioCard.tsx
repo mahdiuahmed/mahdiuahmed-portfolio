@@ -41,13 +41,13 @@ export function PortfolioCard({
         className
       )}
     >
-      <div className="aspect-16/9 w-full">
+      <div className=" w-full bg-primary/40">
         <Image
           alt=""
           src={imageURL}
           width={0}
           height={0}
-          className="h-full w-full object-cover object-center -mt-6"
+          className="h-full w-full object-center"
         />
       </div>
       <CardHeader className="">

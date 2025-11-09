@@ -160,7 +160,7 @@ export default function AboutMe({
             </h1>
             <p className="mb-8 whitespace-pre-line">{description}</p>
             <Separator className="mb-8" />
-            <ul className="space-y-8">
+            <ul className="space-y-8 gap-4 px-6">
               {features.map((feature, i) => (
                 <li key={i} className="space-y-2">
                   <p className="flex gap-2 p-2 bg-primary justify-center rounded-lg text-background font-bold">

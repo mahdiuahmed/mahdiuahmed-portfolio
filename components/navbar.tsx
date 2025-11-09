@@ -75,7 +75,7 @@ export default function Navbar() {
                 variant="outline"
               >
                 <Link
-                  href="/Mahdi Ahmed - Developer Resume.pdf"
+                  href="/Mahdi Ahmed Software & QA Testing Resume.pdf"
                   target="_blank"
                   rel="noopener noreferrer"
                   className=""
@@ -116,7 +116,7 @@ export default function Navbar() {
                     Programming Projects
                   </Link>
                   <Link
-                    href="#contact"
+                    href="#graphics"
                     className=" text-lg border-b-2"
                     onClick={() => setIsOpen(false)}
                   >
@@ -140,7 +140,7 @@ export default function Navbar() {
                     variant="outline"
                   >
                     <Link
-                      href="/Mahdi Ahmed - Developer Resume.pdf"
+                      href="/Mahdi Ahmed Software & QA Testing Resume.pdf"
                       target="_blank"
                       rel="noopener noreferrer"
                       className=" p-3 text-lg"

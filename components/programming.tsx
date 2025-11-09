@@ -58,7 +58,15 @@ export default function Programming({ className }: { className?: string }) {
       title: "Uptime Monitor - Website Monitoring Service",
       description:
         "A real-time uptime monitoring platform that allows users to track the availability and performance of their websites. Built with a focus on reliability and user experience incorporating detailed performance analytics through an intuitive dashboard.",
-      technologies: ["Next.js", "TailwindCSS", "Firebase"],
+      technologies: [
+        "Next.js",
+        "Clerk",
+        "Supabase",
+        "Github Actions",
+        "Cucumber + Gherkin",
+        "Vitest",
+        "Selenium",
+      ],
       imageUrl: "/image copy.png",
       projectUrl: "https://uptime-monitor-weld.vercel.app/",
       // githubUrl: "https://github.com/mahdiuahmed/uptime-monitor",

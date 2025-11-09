@@ -278,7 +278,7 @@ export function FirebaseMasonryGallery({
               )}
             </div>
             <div className="flex items-center gap-2">
-              <Button
+              {/* <Button
                 variant="ghost"
                 size="icon"
                 className="text-white hover:bg-white/20"
@@ -310,7 +310,7 @@ export function FirebaseMasonryGallery({
                 }}
               >
                 <ZoomIn className="h-4 w-4" />
-              </Button>
+              </Button> */}
               <Button
                 variant="ghost"
                 size="icon"
@@ -345,11 +345,11 @@ export function FirebaseMasonryGallery({
           </div>
 
           {/* Instructions */}
-          <div className="absolute bottom-4 left-1/2 -translate-x-1/2">
+          {/* <div className="absolute bottom-4 left-1/2 -translate-x-1/2">
             <Badge variant="secondary" className="text-xs opacity-75">
               Use arrow keys to navigate • ESC to close • +/- to zoom
             </Badge>
-          </div>
+          </div> */}
         </div>
       )}
     </div>
